@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-3">
                             <input type="number" class="form-control form-control-sm" id="quantity"
-                                onchange="priceChange()" name="quantity[]">
+                                onchange="priceChange()" min="1" name="quantity[]">
                         </div>
                         <div class="col-3">
                             <h6 id="price"></h6>
@@ -112,7 +112,6 @@
             let price = document.querySelectorAll('#price');
             let quantity = document.querySelectorAll('#quantity');
             let select = document.querySelectorAll('option:checked');
-            console.log(JSON.parse(select[select.length - 1].id).price * quantity[quantity.length - 1].value);
             price[price.length - 1].innerHTML = quantity[quantity.length - 1].value == 0 ? JSON.parse(select[select.length -
                     1].id).price :
                 JSON.parse(select[select.length - 1].id).price * quantity[quantity
@@ -120,7 +119,6 @@
 
             let sum = 0
             let total = document.querySelector("#total");
-            console.log(total)
             Prices = Object.values(price).map((price) => {
                 sum += parseInt(price.innerHTML)
                 return sum;
@@ -132,6 +130,8 @@
         function add() {
             let container = document.querySelector('.container');
             let row = document.querySelectorAll('.row');
+            let select = document.querySelectorAll('select');
+            let quantity = document.querySelector('#quantity');
             let newRow = document.createElement("div");
             newRow.classList.add("row", "text-center")
             row[index].after(newRow, row[index].nextSibling);
@@ -140,6 +140,14 @@
             newRow.appendChild(ProductCol)
             let clone = row[index].cloneNode(true)
             row[index].after(clone, row[index].nextSibling)
+            select[select.length-1].setAttribute('disabled','disabled')
+            quantity.setAttribute('disabled','disabled')
+             price = document.querySelectorAll('#price');
+             quantity = document.querySelectorAll('#quantity');
+             price[price.length-1].innerHTML = 0;
+             quantity[quantity.length-1].value =1
+
+
         }
     </script>
 @endsection

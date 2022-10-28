@@ -57,9 +57,6 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $row->client->name }}</p>
                                             </td>
                                             <td class="text-center">
-                                                {{ method_field('PUT') }}
-                                                <a class="fa-solid fa-pen-to-square text-secondary" type="button"
-                                                    href="{{ route('invoices.edit', $row->id) }}"></a>
                                                 <a class="fas fa-trash text-secondary" type="button" data-bs-toggle="modal"
                                                     data-bs-target="#delete-modal-{{ $row->id }}" data-url=""></a>
                                                 <div>
