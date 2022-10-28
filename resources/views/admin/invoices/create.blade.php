@@ -140,13 +140,13 @@
             newRow.appendChild(ProductCol)
             let clone = row[index].cloneNode(true)
             row[index].after(clone, row[index].nextSibling)
-            select[select.length-1].setAttribute('disabled','disabled')
-            quantity.setAttribute('disabled','disabled')
-             price = document.querySelectorAll('#price');
-             quantity = document.querySelectorAll('#quantity');
-             price[price.length-1].innerHTML = 0;
-             quantity[quantity.length-1].value =1
-
+            select[select.length - 1].setAttribute('disabled', 'disabled')
+            quantity.setAttribute('disabled', 'disabled')
+            price = document.querySelectorAll('#price');
+            quantity = document.querySelectorAll('#quantity');
+            price[price.length - 1].innerHTML = 0;
+            quantity[quantity.length - 1].value = 1
+            index++
 
         }
     </script>
