@@ -131,7 +131,7 @@
             let container = document.querySelector('.container');
             let row = document.querySelectorAll('.row');
             let select = document.querySelectorAll('select');
-            let quantity = document.querySelector('#quantity');
+            let quantity = document.querySelectorAll('#quantity');
             let newRow = document.createElement("div");
             newRow.classList.add("row", "text-center")
             row[index].after(newRow, row[index].nextSibling);
@@ -141,7 +141,7 @@
             let clone = row[index].cloneNode(true)
             row[index].after(clone, row[index].nextSibling)
             select[select.length - 1].setAttribute('disabled', 'disabled')
-            quantity.setAttribute('disabled', 'disabled')
+            quantity[quantity.length - 1].setAttribute('disabled', 'disabled')
             price = document.querySelectorAll('#price');
             quantity = document.querySelectorAll('#quantity');
             price[price.length - 1].innerHTML = 0;
